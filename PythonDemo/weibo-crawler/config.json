@@ -1,0 +1,19 @@
+{
+    "user_id_list": ["1649155730"],
+    "filter": 1,
+    "since_date": "2009-09-23",
+    "write_mode": ["csv"],
+    "original_pic_download": 1,
+    "retweet_pic_download": 0,
+    "original_video_download": 1,
+    "retweet_video_download": 0,
+    "result_dir_name": 0,
+    "cookie": "_T_WM=31754220269; SUB=_2A25y2l-JDeRhGeRG7VsX8CfJyz6IHXVuJWHBrDV6PUJbktANLRnRkW1NTepGNZBUmPxwtZL8ypy3rD81p-SCx54i; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WF_pXUzQ6.ZVhsGZQPbz_Vu5NHD95QE1hq4So54SK5EWs4DqcjiKNiLIcL9UPxy; SSOLoginState=1608396762; WEIBOCN_FROM=1110006030; MLOGIN=1; M_WEIBOCN_PARAMS=luicode%3D20000174%26uicode%3D20000174",
+    "mysql_config": {
+        "host": "localhost",
+        "port": 3306,
+        "user": "root",
+        "password": "123456",
+        "charset": "utf8mb4"
+    }
+}

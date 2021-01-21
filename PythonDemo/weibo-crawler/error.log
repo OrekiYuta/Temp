@@ -1,0 +1,35 @@
+2020-12-20 01:01:24,189 - ERROR - weibo.py[:1073] - 'id'
+Traceback (most recent call last):
+  File ".\weibo.py", line 1042, in get_pages
+    self.print_user_info()
+  File ".\weibo.py", line 561, in print_user_info
+    logger.info(u'用户id：%s', self.user['id'])
+KeyError: 'id'
+2020-12-20 01:02:07,622 - ERROR - weibo.py[:1073] - 'id'
+Traceback (most recent call last):
+  File ".\weibo.py", line 1042, in get_pages
+    self.print_user_info()
+  File ".\weibo.py", line 561, in print_user_info
+    logger.info(u'用户id：%s', self.user['id'])
+KeyError: 'id'
+2020-12-20 01:03:04,719 - ERROR - weibo.py[:1073] - 'id'
+Traceback (most recent call last):
+  File ".\weibo.py", line 1042, in get_pages
+    self.print_user_info()
+  File ".\weibo.py", line 561, in print_user_info
+    logger.info(u'用户id：%s', self.user['id'])
+KeyError: 'id'
+2020-12-20 01:03:16,157 - ERROR - weibo.py[:1073] - 'id'
+Traceback (most recent call last):
+  File ".\weibo.py", line 1042, in get_pages
+    self.print_user_info()
+  File ".\weibo.py", line 561, in print_user_info
+    logger.info(u'用户id：%s', self.user['id'])
+KeyError: 'id'
+2020-12-20 01:03:32,635 - ERROR - weibo.py[:1073] - 'id'
+Traceback (most recent call last):
+  File ".\weibo.py", line 1042, in get_pages
+    self.print_user_info()
+  File ".\weibo.py", line 561, in print_user_info
+    logger.info(u'用户id：%s', self.user['id'])
+KeyError: 'id'

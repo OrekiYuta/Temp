@@ -1,0 +1,132 @@
+from bs4 import BeautifulSoup
+import re
+
+# headers = {
+#     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit'
+#                   '/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safar'
+#                   'i/537.36',
+# }
+# ## analyse
+# url = "https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5"
+# res = requests.get(url, headers=headers)
+# res.encoding = "utf-8"
+# getSource = json.loads(res.text)
+# # str
+# # sourceData = getSource["data"]
+# # dict
+# sourceData = json.loads(getSource["data"])
+#
+# # print(type(sourceData))
+# # print(sourceData)
+#
+# # print(sourceData.keys())
+#
+# print(sourceData["lastUpdateTime"])
+# # print(sourceData["chinaTotal"])
+# # print(sourceData["chinaAdd"])
+# # print(sourceData["isShowAdd"])
+# # print(sourceData["showAddSwitch"])
+#
+# # print(sourceData["areaTree"][0].keys())
+# # print(sourceData["areaTree"][0]["name"])
+# # print(sourceData["areaTree"][0]["today"])
+# # print(sourceData["areaTree"][0]["total"])
+#
+#
+# # print(len(sourceData["areaTree"][0]["children"]))
+# # print(type(sourceData["areaTree"][0]["children"]))
+# # print(sourceData["areaTree"][0]["children"][13])
+#
+#
+# #
+# # for i in sourceData["areaTree"][0]["children"]:
+# #     print(i["name"])
+# #     print(i["today"])
+# #     print(i["total"])
+
+"""
+# Connect to MariaDB Platform
+try:
+    conn = mariadb.connect(
+        user="root",
+        password="raspberry",
+        host="192.168.137.165",
+        port=3306,
+        database="virus"
+
+    )
+except mariadb.Error as e:
+    print(f"Error connecting to MariaDB Platform: {e}")
+    sys.exit(1)
+
+# Get Cursor
+cur = conn.cursor()
+
+# conn.commit() # 提交事务
+sql1 = "select * from tencent_virus_data"
+sql2 = "insert into tencent_virus_data(province_name_," \
+       "city_name_,city_today_confirm_,city_total_confirm_," \
+       "city_total_heal_,city_total_dead_,lastUpdateTime,this_date_setTime_)values (%s,%s,%s,%s,%s,%s,%s,%s)"
+
+thisTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+
+# cur.execute(sql2, [1, 2, 3, 4, 5, 6, time.strftime(thisTime), time.strftime(thisTime)])
+
+conn.commit()  # 提交事务要跟在插入语句后,要不插入不了 update delete insert
+
+cur.execute(sql1)
+fetchall = cur.fetchall()
+print(fetchall)
+
+cur.close()
+conn.close()
+"""
+
+------------------------------------
+
+# 搜狗热搜 热搜用的JS加载，用 selenium 抓取 / 疫情数据是json可以获取
+
+# selenium
+# pip install selenium
+# https://npm.taobao.org/mirrors/chromedriver/ 下载符合浏览器的驱动
+
+def sogou_hotSearch():
+    headers = 'user-agent="MQQBrowser/26 Mozilla/5.0 (Linux; U; Android 2.3.7; zh-cn; MB200 Build/GRJ22; ' \
+              'CyanogenMod-7) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1" '
+
+    url = "https://sa.sogou.com/new-weball/page/sgs/epidemic?type_page=VR"
+
+    # res = requests.get(url, headers=headers)
+    # res.encoding = "utf-8"
+    # html = res.text
+    # soup = BeautifulSoup(html, "lxml")
+    # soup.find_all(name="ul", attrs={"class": "list-fh"})
+    # print(soup.text)
+
+    # 把 Chrome()对象放在方法里,方法执行完毕谷歌浏览器对象就会关闭,打开的谷歌浏览器页面也就随着关闭,放在全局变量就可以了
+
+    # chorme =Chrome(r"chromedriver.exe")
+    # https://zhuanlan.zhihu.com/p/60852696 ChromeOptions 配置参数
+    from selenium.webdriver.chrome.options import Options
+    # options = Options()
+
+    options = ChromeOptions()
+    options.add_argument(headers)
+    options.add_argument("--headless")  # 隐藏浏览器
+    options.add_argument("--no-sandbox")  # linux 需要禁用这个
+    options.add_argument("--disable-gpu")
+    options.add_argument('blink-settings=imagesEnabled=false') # 不加载图片资源
+    chrome = Chrome(options=options)
+    chrome.get(url)
+    # ul = chrome.find_element_by_class_name("list-fh")
+    el_lis = chrome.find_elements_by_xpath('//*[@id="no_active_pane"]/div/div/div[2]/ul/li')
+    for el_li in el_lis:
+        print(el_li.text)
+
+    chrome.close()
+
+
+# chrome = Chrome()
+sogou_hotSearch()
+
+
