@@ -1,0 +1,232 @@
+
+
+title: Verification Code properties
+Sites:
+  - url: https://www.qncyw.com/site/signup
+    name: qncyw
+    nameCn: 青年创业网
+    parser: selector
+    phoneInputParser: '#username'
+    sendButtonParser: '#btnSendCode'
+  - url: http://www.360doc.com/register.aspx
+    name: 360doc
+    nameCn: 个人图书馆
+    parser: selector
+    phoneInputParser: '#signMobileName'
+    sendButtonParser: '#sign_sendcode'
+  - url: http://passport.iwgame.com/reg/account/regpage.do
+    name: iwgame
+    nameCn: 河岸网络
+    parser: xpath
+    phoneInputParser: '//*[@name="identityId"]'
+    sendButtonParser: '//*[@id="regPersonalForm"]/ul/li[5]/div[1]/em/a'
+  - url: http://game.g.pptv.com/register/
+    name: game.g.pptv
+    nameCn: pp互娱
+    parser: selector
+    phoneInputParser: '#J_phone'
+    sendButtonParser: 'body > div.wrap.reg_wrap > div.login_box > div > form > dl:nth-child(8) > dd > span'
+  - url: http://reg.ztgame.com/
+    name: ztgame
+    nameCn: 巨人网络
+    parser: xpath
+    phoneInputParser: '//*[@name="phone"]'
+    sendButtonParser: '//*[@name="get_mpcode"]'
+  - url: http://www.iprbase.com/register/
+    name: iprbase
+    nameCn: 原创基地
+    parser: xpath
+    phoneInputParser: '//*[@name="account"]'
+    sendButtonParser: '//*[@id="mobile_form"]/div[2]/div/div/a'
+  - url: https://www.xd.com/users/register/
+    name: xd
+    nameCn: 心动网络
+    parser: xpath
+    phoneInputParser: '//*[@name="mobile"]'
+    sendButtonParser: '//*[@id="mobileSendBtn"]'
+  - url: https://sso.kuaidi100.com/sso/reg.jsp
+    name: kuaidi100
+    nameCn: 快递100
+    parser: xpath
+    phoneInputParser: '//*[@id="name"]'
+    sendButtonParser: '//*[@id="send"]'
+  - url: https://passport.vip.com/register
+    name: passport.vip
+    nameCn: 唯品会
+    parser: xpath
+    phoneInputParser: '//*[@id="J_mobile_name"]'
+    sendButtonParser: '//*[@class="vcsi_sms_wrap"]/a'
+  - url: https://www.tangeche.com/market
+    name: tangeche
+    nameCn: 弹个车
+    parser: xpath
+    phoneInputParser: '//*[@id="app"]/div[2]/section[1]/div[3]/div/div[2]/div[1]/input'
+    sendButtonParser: '//*[@id="app"]/div[2]/section[1]/div[3]/div/div[2]/div[2]'
+  - url: https://id.oppo.com/index.html
+    name: oppo
+    nameCn: oppo
+    parser: xpath
+    phoneInputParser: '//*[@id="box"]/div[2]/div/div[3]/div[2]/div[1]/input'
+    sendButtonParser: '//*[@id="box"]/div[2]/div/div[3]/div[3]/div[2]/div[1]/div'
+  - url: http://passport.migu.cn/login
+    name: migu
+    nameCn: 咪咕
+    parser: xpath
+    phoneInputParser: '//*[@id="J_PhoneOne"]'
+    sendButtonParser: '//*[@id="J_GetMsgCodeOne"]'
+  - url: https://passport.58.com/reg
+    name: 58
+    nameCn: 58同城
+    parser: xpath
+    phoneInputParser: '//*[@id="mask_body_item_phonenum"]'
+    sendButtonParser: '//*[@id="mask_body_item_getcode"]'
+  - url: https://login.51job.com/register.php
+    name: 51job
+    nameCn: 前程无忧
+    parser: xpath
+    phoneInputParser: '//*[@id="phone"]'
+    sendButtonParser: '//*[@id="btn7"]'
+  - url: https://wse.com.cn/zh/register/
+    name: wse
+    nameCn: 华尔街英语
+    parser: xpath
+    phoneInputParser: '//*[@id="mobileNumber"]'
+    sendButtonParser: '//*[@id="send-verification-code-span"]'
+  - url: https://www.deppon.com/register
+    name: deppon
+    nameCn: 德邦物流
+    parser: xpath
+    phoneInputParser: '//*[@id="register"]/div[1]/div[2]/form/div[1]/label/input'
+    sendButtonParser: '//*[@id="register"]/div[1]/div[2]/form/div[2]/label/button'
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
+#  - url:
+#    name:
+#    nameCn:
+#    parser: xpath
+#    phoneInputParser: ''
+#    sendButtonParser: ''
