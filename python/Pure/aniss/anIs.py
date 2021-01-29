@@ -59,6 +59,7 @@ def anime():
         f.write(result)
         f.close()
 
+
 # print(get_token())
 if __name__ == '__main__':
     anime()

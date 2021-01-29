@@ -6,6 +6,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="PythonDemo" />
     <orderEntry type="module" module-name="ddg" />
+    <orderEntry type="module" module-name="roboko" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
