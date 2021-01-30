@@ -1,0 +1,82 @@
+* { margin: 0;padding: 0;}
+body{
+    background: #d2d0d0;
+}
+.container{
+    /*{#自身样式#}*/
+    width: 70%;
+    min-width: 500px;
+    margin: 0 auto;
+    box-shadow: #b9b9b9 0 0 6px 4px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    /*{#内部元素样式#}*/
+    display: flex;
+    flex-direction: column;
+
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+button{
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin: 1px ;
+
+
+}
+.main{
+    height: 80vh;
+    border-top: 1px solid #aaa;
+    display: flex;
+
+}
+.main .friend-list{
+    border-right: 1px solid #aaa;
+    width: 20%;
+    background: #eee;
+}
+.main .chat{
+    width: 80%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: #eee;
+}
+.main .chat .chat-main{
+
+    height: 70%;
+    flex-grow: 1;
+}
+.main .chat .chat-send{
+    height: 30%;
+    border-top: 1px solid #aaa;
+    display: flex;
+    flex-direction: column;
+}
+.main .chat-send .chat-input{
+    /*{#禁止拖拉宽度#}*/
+    resize: none;
+    /*{#自动使用剩余空间#}*/
+    flex-grow: 1;
+    border: none;
+    margin: 0;
+}
+.main .chat-send .chat-input:focus{
+    /*{#取消选择提示样式#}*/
+    outline: none;
+}
+.main .chat-send .chat-send-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    font-size: small;
+    color: #bdbdbd;
+    background: #fff;
+}
