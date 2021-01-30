@@ -2,78 +2,101 @@
 <html lang="zh">
   <head>
     <meta charset="UTF-8" />
-    <title>amis demo</title>
+    <title>聊天室</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <link rel="stylesheet" href="../static/sdk/sdk.css" />
-    <!-- 从 1.1.0 开始 sdk.css 将不支持 IE 11，如果要支持 IE11 请引用这个 css，并把前面那个删了 -->
-    <!-- <link rel="stylesheet" href="sdk-ie11.css" /> -->
-    <!-- 不过 amis 开发团队几乎没测试过 IE 11 下的效果，所以可能有细节功能用不了，如果发现请报 issue -->
-    <style>
-      html,
-      body,
-      .app-wrapper {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+    <link rel="stylesheet" href="../../static/css/mvp.css" />
+    <script type="text/javascript">
+        window.onload = function(){
+            var nickname = localStorage.getItem('nickname');
+            if(nickname){
+                document.getElementById('user').innerText = nickname + ", 欢迎进入聊天室！"
+            }else{
+                window.location.href = '/';
+            }
+
+        }
+        function quit() {
+            localStorage.removeItem('nickname');
+            window.location.href = '/';
+        }
+    </script>
+    <style type="text/css">
+        * { margin: 0;padding: 0;}
+        body{
+            background: #d2d0d0;
+        }
+        .container{
+            {#自身样式#}
+            width: 70%;
+            min-width: 500px;
+            margin: 0 auto;
+            box-shadow: #b9b9b9 0 0 6px 4px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            {#内部元素样式#}
+            display: flex;
+            flex-direction: column;
+
+        }
+        .header{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+        }
+        #quit{
+            padding-bottom: 0px;
+            padding-top: 0px;
+            margin: 1px ;
+
+
+        }
+        .main{
+            height: 80vh;
+            border-top: 1px solid #aaa;
+            display: flex;
+
+        }
+        .main .friend-list{
+            border-right: 1px solid #aaa;
+            width: 20%;
+            background: #eee;
+        }
+        .main .chat{
+            width: 80%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            background: #eee;
+        }
+        .main .chat .chat-main{
+
+            height: 70%;
+            flex-grow: 1;
+        }
+        .main .chat .chat-send{
+            height: 30%;
+            border-top: 1px solid #aaa;
+        }
     </style>
   </head>
+
   <body>
-    <div id="root" class="app-wrapper">cccccccc</div>
-    <script src="../static/sdk/sdk.js"></script>
-{#    <script type="text/javascript">#}
-{#      (function () {#}
-{#        let amis = amisRequire('amis/embed');#}
-{#        // 通过替换下面这个配置来生成不同页面#}
-{#        let amisJSON =#}
-{##}
-{#         {#}
-{#              "type": "grid",#}
-{#              "columns": [#}
-{#                {#}
-{#                  "type": "form",#}
-{#                  "api": "http://127.0.0.1:8088/chat/",#}
-{#                  "title": "登录在线聊天",#}
-{#                  "mode": "horizontal",#}
-{#                  "autoFocus": false,#}
-{#                  "horizontal": {#}
-{#                    "left": "col-sm-2",#}
-{#                    "right": "col-sm-10",#}
-{#                    "offset": "col-sm-offset-2"#}
-{#                  },#}
-{#                  "controls": [#}
-{#                    {#}
-{#                      "type": "text",#}
-{#                      "name": "name",#}
-{#                      "placeholder": "请输入昵称",#}
-{#                      "label": "昵称",#}
-{#                      "required": true,#}
-{#                    },#}
-{#                    {#}
-{#                      "type": "password",#}
-{#                      "name": "password",#}
-{#                      "label": "密码",#}
-{#                      "placeholder": "输入密码"#}
-{#                    },#}
-{#                    {#}
-{#                      "type": "checkbox",#}
-{#                      "name": "rememberMe",#}
-{#                      "label": "记住登录"#}
-{#                    }#}
-{#                  ]#}
-{#                }#}
-{#                ]#}
-{#         }#}
-{#        ;#}
-{#        let amisScoped = amis.embed('#root', amisJSON,{});#}
-{#      })();#}
-{#    </script>#}
+    <div class="container">
+        <div class="header">
+            <div id="user"></div>
+            <button id="quit" onclick="quit()">注销</button>
+        </div>
+        <div class="main">
+            <div class="friend-list"></div>
+            <div class="chat">
+                <div class="chat-main"></div>
+                <div class="chat-send"></div>
+            </div>
+        </div>
+    </div>
+
   </body>
 </html>
