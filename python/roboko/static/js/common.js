@@ -4,10 +4,15 @@
     let user ;
     window.onload = function(){
         let nickname = localStorage.getItem('nickname');
+
         user=nickname;
         if(nickname){
+
             document.getElementById('user').innerText = nickname + ", 欢迎进入聊天室！"
 
+            let auth = localStorage.getItem('auth');
+
+            ws = new WebSocket(ws_url+'?auth='+auth);
             ws = new WebSocket(ws_url);
             ws.onopen = function (e) {
                 console.log('websocket建立连接成功')
@@ -26,7 +31,7 @@
                 historyMessage('系统通知:发送错误,连接中断')
             }
         }else{
-            window.location.href = '/';
+            window.location.href = '/static/login.html';
         }
 
     }
@@ -65,7 +70,7 @@
             }
         }
         localStorage.removeItem('nickname');
-        window.location.href = '/';
+        window.location.href = '/static/login.html';
     }
 
 

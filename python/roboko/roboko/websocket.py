@@ -1,3 +1,8 @@
+import urllib
+
+CONNECTIONS = {}
+
+
 async def websocket_application(scope, receive, send):
     while True:
         event = await receive()
@@ -6,6 +11,13 @@ async def websocket_application(scope, receive, send):
         # 收到建立 websocket 连接的消息
         if event['type'] == 'websocket.connect':
             await send({'type': 'websocket.accept'})
+
+            # 取出auth
+            query_string = scope.get('query_string', b'').decode()
+            qs = urllib.parse.parse_qs(query_string)
+            auth = qs.get('auth', [''])[0]
+            #     记录send对象
+            CONNECTIONS[auth] = send
 
         # 收到断开 websocket 连接的消息
         elif event['type'] == 'websocket.disconnect':

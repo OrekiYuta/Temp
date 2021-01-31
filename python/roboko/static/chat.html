@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>聊天室</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/mvp.css" />
+    <link rel="stylesheet" href="css/common.css" />
+  </head>
+  <body>
+    <div class="container">
+        <div class="header">
+            <div id="user"></div>
+            <button id="quit" onclick="quit()">注销</button>
+        </div>
+        <div class="main">
+            <div class="friend-list"></div>
+            <div class="chat">
+                <div class="chat-main"></div>
+                <div class="chat-send">
+                    <textarea class="chat-input" onkeydown="inputKeyDown(event)"></textarea>
+                    <div class="chat-send-bottom">
+                        <span class="chat-send-tip" >Enter 发送 , Ctrl + Enter 换行</span>
+                        <button onclick="sendMessageBtn()" >发送</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </body>
+
+    <script type="text/javascript" src="js/common.js"></script>
+</html>
